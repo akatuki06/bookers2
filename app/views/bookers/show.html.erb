@@ -1,0 +1,9 @@
+<p>
+	<strong>Title:</strong><%= @post.title %>
+</p>
+
+<p>
+	<strong>Body:</strong><%= @post.body %>
+</p>
+
+<%= link_to "Edit", edit_booker_path(@post) %> | <%= link_to "Back", bookers_path %>
