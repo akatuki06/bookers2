@@ -14,6 +14,8 @@ class BookersController < ApplicationController
 
   def create
   	  post = Booker.new(post_params)
+      # post.子のid(投稿id)  =  親(ログインしている人)のid←つまり紐付け
+      post.user_id = current_user.id
   	  post.save
   	  redirect_to bookers_path
   end

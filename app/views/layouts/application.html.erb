@@ -9,6 +9,63 @@
   </head>
 
   <body>
+
+  
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+      <nav class="nav navbar-nav navbar-left">
+      <span class="glyphicon glyphicon-book">Bookers</span>
+      </nav>
+      <nav>
+        <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li>
+            <a class="glyphicon glyphicon-home" href="/"> Home </a>
+          </li>
+          <li>
+            <a class="glyphicon glyphicon-link" href="/home/about"> About </a>
+          </li>
+          <li>
+            <a class="glyphicon glyphicon-edit" href="/users/sign_up"> sign up </a>
+          </li>
+          <li>
+          	<%= link_to destroy_user_session_path, method: :delete do %>
+          		<div class="glyphicon glyphicon-log-out"> logout </div>
+          	<% end %>
+            <!-- <a class="glyphicon glyphicon-log-in" href="/users/sign_in"> login  </a> -->
+          </li>
+          <% else %>
+          <li>
+            <a class="glyphicon glyphicon-home" href="/"> Home </a>
+          </li>
+          <li>
+            <a class="glyphicon glyphicon-link" href="/home/about"> About </a>
+          </li>
+          <li>
+            <a class="glyphicon glyphicon-edit" href="/users/sign_up"> sign up </a>
+          </li>
+          <li>
+          	<%= link_to new_user_session_path do %>
+          		<div class="glyphicon glyphicon-log-in"> login </div>
+          	<% end %>	
+            <!-- <a class="glyphicon glyphicon-log-in" href="/users/sign_in"> login  </a> -->
+          </li>
+         <% end %>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
     <%= yield %>
+
+   <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-3 col-xs-offset-9">
+          <p>CopyRight Infratop.inc</p>
+        </div>
+      </div>
+  </footer>
+
   </body>
 </html>
