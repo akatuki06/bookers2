@@ -1,7 +1,9 @@
 class BookersController < ApplicationController
   def index
+      # @user = User.find(params[:id])
   	  @post = Booker.new
   	  @posts = Booker.all
+      # @posts = @user.posts.page(params[:page]) 
   end
 
   def show
@@ -17,7 +19,7 @@ class BookersController < ApplicationController
       # post.子のid(投稿id)  =  親(ログインしている人)のid←つまり紐付け
       post.user_id = current_user.id
   	  post.save
-  	  redirect_to bookers_path
+  	  redirect_to user_path(current_user)
   end
 
   def edit

@@ -18,7 +18,10 @@
 					</tbody>
 				</table>
 					<div class="row">
-						<a class="col-xs-12 btn btn-default glyphicon glyphicon-wrench" href="/users/100/edit"></a>
+						<%= link_to edit_user_path(current_user) do %>
+							<div class="col-xs-12 btn btn-default glyphicon glyphicon-wrench"></div>
+						<% end %>
+						<!-- <a class="col-xs-12 btn btn-default glyphicon glyphicon-wrench" href="/users/100/edit"></a> -->
 					</div>
 
 
@@ -58,7 +61,7 @@
 									<th colspan="3"></th>
 								</tr>
 							</thead>
-						  <% @posts.each do |book| %>
+						  <% @user.bookers.each do |book| %>
 							<tbody>
 								<tr>
 									<td>画像</td>
