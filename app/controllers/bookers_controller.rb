@@ -1,4 +1,6 @@
 class BookersController < ApplicationController
+before_action :authenticate_user!
+  
   def index
       # @user = User.find(params[:id])
   	  @post = Booker.new
@@ -7,7 +9,8 @@ class BookersController < ApplicationController
   end
 
   def show
-  	  @post = Booker.find(params[:id])
+      @post = Booker.new
+      @posted = Booker.find(params[:id])
   end
 
   def new
@@ -15,15 +18,24 @@ class BookersController < ApplicationController
   end
 
   def create
-  	  post = Booker.new(post_params)
+  	  @post = Booker.new(post_params)
       # post.子のid(投稿id)  =  親(ログインしている人)のid←つまり紐付け
-      post.user_id = current_user.id
-  	  post.save
+      @post.user_id = current_user.id
+  	  if @post.save
   	  redirect_to user_path(current_user)
+      else
+        @posts = Booker.all
+        render :index
+      end
   end
 
   def edit
-  	  @post = Booker.find(params[:id])
+  	  @posted = Booker.find(params[:id])
+
+      if @posted.user != current_user
+          redirect_to user_path(current_user)
+      end
+
   end
 
   def update
