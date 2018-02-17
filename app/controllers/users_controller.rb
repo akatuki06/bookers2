@@ -22,7 +22,6 @@ class UsersController < ApplicationController
   def index
     @post = Booker.new
     @users = User.all
-    # @user = User.find(params[:id])
   end
 
 private 

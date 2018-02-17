@@ -2,10 +2,8 @@ class BookersController < ApplicationController
 before_action :authenticate_user!
   
   def index
-      # @user = User.find(params[:id])
   	  @post = Booker.new
   	  @posts = Booker.all
-      # @posts = @user.posts.page(params[:page]) 
   end
 
   def show

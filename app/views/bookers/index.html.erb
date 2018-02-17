@@ -21,9 +21,7 @@
 						<%= link_to edit_user_path(current_user) do %>
 							<div class="col-xs-12 btn btn-default glyphicon glyphicon-wrench"></div>
 						<% end %>
-						<!-- <a class="col-xs-12 btn btn-default glyphicon glyphicon-wrench" href="/users/100/edit"></a> -->
 					</div>
-
 
 					<h2>New book</h2>
 
@@ -44,21 +42,10 @@
 
 						<div>Opinion</div>
 						<%= f.text_area :body, class: 'col-xs-12' %>
-
-						<div>
-							<input type="submit" name="commit" value="Create Book" class="btn btn-primary col-xs-12" data-disable-with="Create Book">
-							<!-- <%#= f.submit 'Create Book' %> -->
-						</div>
-
+        				<%= f.submit "Create Book", class: "btn btn-primary col-xs-12s" %>
+						<!-- <div class="btn btn-primary col-xs-12">Create Book</div> -->
 					<% end %>
-
 			</div>
-
-
-
-
-
-
 
 				<div class="col-xs-9">
 					<h2>Books</h2>
@@ -81,16 +68,6 @@
 									</td>
 									<td><%= link_to book.title, booker_path(book) %></td>
 									<td><%= book.body %></td>
-									<!-- <td>
-										<%#= link_to "Show", booker_path(book) %>
-									</td>
-									<td>
-										<%#= link_to "Edit", edit_booker_path(book) %>
-									</td>
-									<td>
-										<%#= link_to "Destroy", booker_path(book), method: :delete %>
-									</td> -->
-								</tr>
 							</tbody>
 						  <% end %>
 						</table>

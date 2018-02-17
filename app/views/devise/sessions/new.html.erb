@@ -1,35 +1,3 @@
-<!-- <body>
-  <header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="container">
-      <nav class="nav navbar-nav navbar-left">
-      <span class="glyphicon glyphicon-book">Bookers</span>
-      </nav>
-      <nav>
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a class="glyphicon glyphicon-home" href="/"> Home </a>
-          </li>
-          <li>
-            <a class="glyphicon glyphicon-link" href="/home/about"> About </a>
-          </li>
-          <li>
-            <a class="glyphicon glyphicon-edit" href="/users/sign_up"> sign up </a>
-          </li>
-          <li>
-            <a class="glyphicon glyphicon-log-in" href="/users/sign_in"> login  </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-
-
-
-
-
- -->
-
   <div class="body">
     <div class="container">
       <p id="notice"></p>
@@ -40,8 +8,6 @@
       <div class="field">
         <%= f.label 'name' %><br />
         <%= f.text_field :name, autofocus: true %>
-        <!-- <%= f.label :email %><br /> -->
-        <!-- <%= f.email_field :email, autofocus: true, autocomplete: "email" %> -->
       </div>
 
       <div class="field">
@@ -57,23 +23,11 @@
       <% end -%>
 
       <div class="actions">
-        <input type="submit" name="commit" value="Log in" class="btn btn-primary" data-disable-with="Log in">
-        <!-- <%= f.submit  %> -->
+        <!-- <div class="btn btn-primary"><%= f.submit %></div> -->
+        <%= f.submit "Log in", class: "btn btn-primary" %>
+
       </div>
       <% end %>
-
-      <!-- Sign up,For got your password? -->
       <%= render "devise/shared/links" %>
      </div>
   </div>
-
-<!--   <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-3 col-xs-offset-9">
-          <p>CopyRight Infratop.inc</p>
-        </div>
-      </div>
-  </footer>
-
-</body> -->

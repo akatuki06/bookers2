@@ -26,36 +26,29 @@
           </li>
           <li>
             <%= link_to 'Users', users_path, class: 'glyphicon glyphicon-user' %>
-            <!-- <a class="glyphicon glyphicon-link" href="/home/about"> About </a> -->
           </li>
           <li>
             <%= link_to 'Books', bookers_path, class: 'glyphicon glyphicon-book' %>
-            <!-- <a class="glyphicon glyphicon-edit" href="/users/sign_up"> sign up </a> -->
           </li>
           <li>
           	<%= link_to destroy_user_session_path, method: :delete do %>
           		<div class="glyphicon glyphicon-log-out"> logout </div>
           	<% end %>
-            <!-- <a class="glyphicon glyphicon-log-in" href="/users/sign_in"> login  </a> -->
           </li>
           <% else %>
           <li>
             <%= link_to 'Home', root_path, class: 'glyphicon glyphicon-home' %>
-            <!-- <a class="glyphicon glyphicon-home" href="/"> Home </a> -->
           </li>
           <li>
             <%= link_to 'About', home_top_path, class: 'glyphicon glyphicon-link' %>
-            <!-- <a class="glyphicon glyphicon-link" href="/home/about"> About </a> -->
           </li>
           <li>
             <%= link_to ' Sign_up', new_user_registration_path, class: 'glyphicon glyphicon-edit' %>
-            <!-- <a class="glyphicon glyphicon-edit" href="/users/sign_up"> sign up </a> -->
           </li>
           <li>
           	<%= link_to new_user_session_path do %>
           		<div class="glyphicon glyphicon-log-in"> login </div>
           	<% end %>	
-            <!-- <a class="glyphicon glyphicon-log-in" href="/users/sign_in"> login  </a> -->
           </li>
          <% end %>
         </ul>
